@@ -1,98 +1,98 @@
-Windows Monitoring & Security Tool
-A powerful tool to monitor your Windows laptop and detect unauthorized access.
-It runs stealthily in the background and notifies you via Discord when your laptop is turned on.
-Additionally, it allows you to remotely control your laptop using Discord commands.
+# **Windows Monitoring & Security Tool**  
 
-⚡ Features
-✅ Startup Notification – Captures a webcam photo and sends an alert to Discord when the laptop is turned on.
-✅ Remote Control via Discord – Use commands to control your laptop remotely:
+A **powerful tool** to monitor your **Windows laptop** and detect **unauthorized access**.  
+Runs **stealthily in the background** and notifies you via **Discord** when someone turns on your laptop.  
+It also allows **remote control** using Discord commands.  
 
-Command	Description
-!camera	Capture a webcam photo
-!screenshot	Take a screenshot of the screen
-!shell <command>	Execute a shell command remotely
-!shutdown	Shut down the laptop
-!restart	Restart the laptop
-!stop	Stop any ongoing process
-!help	Show help message with available commands
-✅ Runs in Background – No visible console window, hidden execution.
-✅ Easy to Set Up – Convert to .exe and run automatically on startup.
+---
 
-🚀 Installation
-Clone the repository or download the script:
+## 📌 **Features**  
 
-bash
-Copy
-Edit
+✔ **Startup Notification** – Sends an alert with a **webcam photo** when the laptop is powered on.  
+✔ **Remote Control via Discord** – Control your laptop using the following commands:  
+
+```
+!camera      → Capture a webcam photo  
+!screenshot  → Take a screenshot  
+!shell <cmd> → Execute shell commands remotely  
+!shutdown    → Shutdown the laptop  
+!restart     → Restart the laptop  
+!stop        → Stop any ongoing process  
+!help        → Show help message  
+```
+
+✔ **Runs in Background** – **No visible console**, fully hidden execution.  
+✔ **Automatic Startup** – Runs automatically **when Windows starts**.  
+
+---
+
+## ⚡ **Installation**  
+
+1️⃣ **Clone the repository** or **download the script**  
+```bash
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
-Install dependencies (Python 3 required):
-
-bash
-Copy
-Edit
+```
+2️⃣ **Install dependencies** (Python 3 required)  
+```bash
 pip install -r requirements.txt
-Set up your credentials:
+```
+3️⃣ **Set up your credentials**  
+- Open `.env` and add your **Discord bot token** and **channel ID**.  
+- Ensure your bot has **administrator** permissions in your Discord server.  
 
-Open .env and add your Discord bot token and channel ID.
-
-Make sure your bot has administrator permissions on your Discord server.
-
-Run the script:
-
-bash
-Copy
-Edit
+4️⃣ **Run the script**  
+```bash
 python script.py
-The script will start in the background and notify you via Discord when the laptop turns on.
+```
+- The bot will start in the background and **notify you when the laptop turns on**.  
 
-🔄 Convert Script to EXE (Windows Only)
-To run the tool without requiring Python installed:
+---
 
-Step 1: Install PyInstaller
-Open Command Prompt and install PyInstaller:
+## 🔄 **Convert Script to EXE (Windows Only)**  
 
-bash
-Copy
-Edit
+To run the tool **without requiring Python**, convert it to a `.exe` file:  
+
+1️⃣ **Install PyInstaller**  
+```bash
 pip install pyinstaller
-Step 2: Convert Python Script to EXE
-Run this command in the same folder as script.py:
+```
+2️⃣ **Convert the script to EXE**  
+Run this command in the project directory:  
+```bash
+pyinstaller --noconsole --onefile script.py
+```
+✔ `--noconsole` → Hides the console window (runs stealthily).  
+✔ `--onefile` → Generates a **single `.exe` file** inside the `dist` folder.  
 
-bash
-Copy
-Edit
-pyinstaller --noconsole --onefile --hidden-import=pkg_resources script.py
---noconsole → Hides the console window (runs stealthily).
+---
 
---onefile → Creates a single .exe instead of multiple files.
+## 🔧 **Set the EXE to Run at Startup (Windows Only)**  
 
---hidden-import=pkg_resources → Fixes missing dependencies issue.
+To **make the program start automatically** when Windows boots up:  
 
-After this, the .exe file will be generated inside the dist folder.
+1️⃣ **Open Windows Startup Folder**  
+- Press `Win + R`, type:  
+  ```
+  shell:startup
+  ```
+  and press **Enter**.  
 
-🔧 Set the EXE to Run at Startup (Windows Only)
-To make the program run automatically when Windows starts:
+2️⃣ **Move the EXE to Startup Folder**  
+- Go to the `dist` folder inside your project directory.  
+- Copy the generated `.exe` file.  
+- Paste it inside the **Startup** folder.  
 
-Step 1: Open the Startup Folder
-Press Win + R, type:
+3️⃣ **Restart Your Laptop**  
+Now, the tool will **run automatically in the background** every time Windows starts. 🚀  
 
-makefile
-Copy
-Edit
-shell:startup
-and press Enter. This will open the Startup folder.
+---
 
-Step 2: Move the EXE to Startup
-Go to the dist folder inside your project directory.
+## 📜 **Disclaimer**  
 
-Copy the generated .exe file.
+🔹 **This tool is for educational and security purposes only**.  
+🔹 **Do not use it for unethical activities**.  
 
-Paste it inside the Startup folder.
+---
 
-Step 3: Restart Your Laptop
-Now, whenever the laptop starts, the tool will run silently in the background. 🚀
-
-📜 License
-This project is for educational and security purposes only. Use it responsibly.
-
+💻 **Developed with Python & Discord API** 🚀  
