@@ -1,15 +1,14 @@
 # **Windows Monitoring & Security Tool**  
 
-A **powerful tool** to monitor your **Windows laptop** and detect **unauthorized access**.  
-Runs **stealthily in the background** and notifies you via **Discord** when someone turns on your laptop.  
-It also allows **remote control** using Discord commands.  
+A **stealthy Windows monitoring tool** that **alerts you via Discord** when someone turns on your laptop.  
+It also allows **remote control** through Discord commands.  
 
 ---
 
 ## 📌 **Features**  
 
-✔ **Startup Notification** – Sends an alert with a **webcam photo** when the laptop is powered on.  
-✔ **Remote Control via Discord** – Control your laptop using the following commands:  
+✔ **Startup Notification** – Sends an alert with a **webcam photo** when the laptop is turned on.  
+✔ **Remote Control via Discord** – Execute commands remotely, including:  
 
 ```
 !camera      → Capture a webcam photo  
@@ -21,25 +20,25 @@ It also allows **remote control** using Discord commands.
 !help        → Show help message  
 ```
 
-✔ **Runs in Background** – **No visible console**, fully hidden execution.  
+✔ **Runs in Background** – Fully hidden execution (no visible console window).  
 ✔ **Automatic Startup** – Runs automatically **when Windows starts**.  
 
 ---
 
 ## ⚡ **Installation**  
 
-1️⃣ **Clone the repository** or **download the script**  
+1️⃣ **Clone the repository**  
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Prthiv/Windows-Monitoring-Security-Tool.git
+cd Windows-Monitoring-Security-Tool
 ```
 2️⃣ **Install dependencies** (Python 3 required)  
 ```bash
 pip install -r requirements.txt
 ```
-3️⃣ **Set up your credentials**  
-- Open `.env` and add your **Discord bot token** and **channel ID**.  
-- Ensure your bot has **administrator** permissions in your Discord server.  
+3️⃣ **Edit the script with your credentials**  
+- Open `script.py` and replace `TOKEN = ""` with your **Discord bot token**.  
+- Replace `OWNER_ID = ` with your **Discord user ID**.  
 
 4️⃣ **Run the script**  
 ```bash
