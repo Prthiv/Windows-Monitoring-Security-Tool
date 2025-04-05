@@ -1,4 +1,4 @@
-```
+
 # 🛡️ Windows Laptop Monitoring Tool
 
 A **stealthy monitoring tool for Windows laptops** that notifies you via **Discord** when your system turns on, captures a **webcam photo**, and gives you **remote control** using **Discord Slash Commands**.
