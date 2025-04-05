@@ -113,4 +113,4 @@ Do **not** use it for malicious or unauthorized surveillance.
 
 💻 Developed with Python + Discord API  
 🎯 Secure. Stealthy. Smart.
-```
+
