@@ -1,97 +1,116 @@
-# **Windows Monitoring & Security Tool**  
+```
+# 🛡️ Windows Laptop Monitoring Tool
 
-A **stealthy Windows monitoring tool** that **alerts you via Discord** when someone turns on your laptop.  
-It also allows **remote control** through Discord commands.  
+A **stealthy monitoring tool for Windows laptops** that notifies you via **Discord** when your system turns on, captures a **webcam photo**, and gives you **remote control** using **Discord Slash Commands**.
+
+Ideal for **parental control**, **laptop protection**, or **personal remote monitoring**.
 
 ---
 
-## 📌 **Features**  
+## 📌 Features
 
-✔ **Startup Notification** – Sends an alert with a **webcam photo** when the laptop is turned on.  
-✔ **Remote Control via Discord** – Execute commands remotely, including:  
+✔ **Startup Notification**  
+- Automatically sends a message to your Discord with a **webcam photo** when the laptop is turned on.
+
+✔ **Slash Command Control via Discord**  
+Use Discord’s slash commands to control your laptop in real-time:
 
 ```
-!camera      → Capture a webcam photo  
-!screenshot  → Take a screenshot  
-!shell <cmd> → Execute shell commands remotely  
-!shutdown    → Shutdown the laptop  
-!restart     → Restart the laptop  
-!stop        → Stop any ongoing process  
-!help        → Show help message  
+/screenshot   → Capture a screenshot of the desktop  
+/camera       → Take a photo from the webcam  
+/shutdown     → Shutdown the laptop  
+/restart      → Restart the laptop  
+/clear        → Delete all messages from the bot's DM  
+/help         → Show all available commands  
+/stop         → Stop the bot remotely  
 ```
 
-✔ **Runs in Background** – Fully hidden execution (no visible console window).  
-✔ **Automatic Startup** – Runs automatically **when Windows starts**.  
+✔ **Owner-Only Control**  
+- Critical commands like `/shutdown`, `/restart`, `/clear`, and `/stop` are **restricted to the owner's Discord ID only**.
+
+✔ **Automatic Screenshot & Webcam Support**  
+- Captures screen and webcam even if you're not around.
+
+✔ **Background Logging**  
+- All events, errors, and actions are logged in `monitor.log`.
+
+✔ **Runs Hidden**  
+- Designed to run silently without any visible console window (convert to `.exe` for stealth).
 
 ---
 
-## ⚡ **Installation**  
+## ⚙️ Installation
 
-1️⃣ **Clone the repository**  
+1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/Prthiv/Windows-Monitoring-Security-Tool.git
-cd Windows-Monitoring-Security-Tool
+git clone https://github.com/yourusername/Laptop-Monitoring-Bot.git
+cd Laptop-Monitoring-Bot
 ```
-2️⃣ **Install dependencies** (Python 3 required)  
+
+2️⃣ **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
-3️⃣ **Edit the script with your credentials**  
-- Open `script.py` and replace `TOKEN = ""` with your **Discord bot token**.  
-- Replace `OWNER_ID = ` with your **Discord user ID**.  
 
-4️⃣ **Run the script**  
-```bash
-python script.py
+> `requirements.txt` should contain:
 ```
-- The bot will start in the background and **notify you when the laptop turns on**.  
+discord.py
+opencv-python
+pyautogui
+mss
+pillow
+```
+
+3️⃣ **Edit the Script**
+- Open the script and replace the following:
+
+```python
+TOKEN = ""       # Your Discord Bot Token
+OWNER_ID =       # Your Discord User ID (as an integer)
+```
+
+4️⃣ **Run the Script**
+```bash
+python bot.py
+```
+
+The bot will start and **send you a webcam snapshot after 15 seconds**.
 
 ---
 
-## 🔄 **Convert Script to EXE (Windows Only)**  
+## 🔒 Convert to EXE (Optional for Windows)
 
-To run the tool **without requiring Python**, convert it to a `.exe` file:  
+To make it run stealthily (no console popup), convert the script to a `.exe`:
 
-1️⃣ **Install PyInstaller**  
 ```bash
 pip install pyinstaller
+pyinstaller --noconsole --onefile bot.py
 ```
-2️⃣ **Convert the script to EXE**  
-Run this command in the project directory:  
-```bash
-pyinstaller --noconsole --onefile script.py
+
+✔ Output will be in the `dist` folder  
+✔ Run the `.exe` to start the bot without a console window
+
+---
+
+## 🚀 Auto-Start on Windows Boot (Optional)
+
+1. Press `Win + R` and type:
 ```
-✔ `--noconsole` → Hides the console window (runs stealthily).  
-✔ `--onefile` → Generates a **single `.exe` file** inside the `dist` folder.  
+shell:startup
+```
+
+2. Copy your generated `.exe` from `dist/` into this folder.  
+🔁 Your monitoring bot will now **auto-start** every time Windows boots.
 
 ---
 
-## 🔧 **Set the EXE to Run at Startup (Windows Only)**  
+## ⚠️ Disclaimer
 
-To **make the program start automatically** when Windows boots up:  
-
-1️⃣ **Open Windows Startup Folder**  
-- Press `Win + R`, type:  
-  ```
-  shell:startup
-  ```
-  and press **Enter**.  
-
-2️⃣ **Move the EXE to Startup Folder**  
-- Go to the `dist` folder inside your project directory.  
-- Copy the generated `.exe` file.  
-- Paste it inside the **Startup** folder.  
-
-3️⃣ **Restart Your Laptop**  
-Now, the tool will **run automatically in the background** every time Windows starts. 🚀  
+This tool is built for **educational, personal monitoring, and laptop security purposes** only.  
+Do **not** use it for malicious or unauthorized surveillance.
 
 ---
 
-## 📜 **Disclaimer**  
-
-🔹 **This tool is for educational and security purposes only**.  
-🔹 **Do not use it for unethical activities**.  
-
----
-
-💻 **Developed with Python & Discord API** 🚀  
+💻 Developed with Python + Discord API  
+🎯 Secure. Stealthy. Smart.
+```
